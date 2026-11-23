@@ -1,0 +1,266 @@
+/* Clean Sri Lanka හරිත මාවත - Custom Styles & Creative Animations */
+:root {
+  --clean-blue: #34a6cc;
+  --haritha-green: #8abd3f;
+  --bg-clean: #F9F9F9;
+  --surface-white: #FFFFFF;
+  --neon-green: #22c55e;
+  --warning-amber: #f59e0b;
+}
+
+.dark {
+  --bg-clean: #121212;
+  --surface-white: #1E1E1E;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Sinhala', 'Noto Sans Tamil', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-clean);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-brand {
+  font-family: 'Orbitron', 'Inter', sans-serif;
+}
+
+.font-sinhala {
+  font-family: 'Noto Sans Sinhala', 'Inter', sans-serif;
+}
+
+/* Hide scrollbars inside mobile viewport for native app feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* GPS Radar Pulse */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.85;
+  }
+  70% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.radar-ring {
+  animation: radarPulse 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+/* Active Tree Vibrant Neon Green Glow */
+@keyframes neonTreeGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55), 0 0 22px rgba(138, 189, 63, 0.85);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0), 0 0 32px rgba(34, 197, 94, 1);
+    transform: translate(-50%, -50%) scale(1.07);
+  }
+}
+
+.tree-marker-active {
+  animation: neonTreeGlow 2s ease-in-out infinite;
+}
+
+/* Inactive Tree Grayscale */
+.tree-marker-inactive {
+  filter: grayscale(100%) opacity(0.62);
+  transition: all 0.4s ease;
+}
+
+/* Idle Alert Pulse (Amber) */
+@keyframes amberAlertPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
+  }
+}
+
+.idle-alert-pulse {
+  animation: amberAlertPulse 1.8s infinite;
+}
+
+/* Creative Animation 1: Watering Droplets */
+@keyframes waterDropFall {
+  0% {
+    transform: translateY(-25px) scale(0.7);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(135px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+.water-drop {
+  position: absolute;
+  animation: waterDropFall 1.05s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes waterSplashRing {
+  0% {
+    transform: translateX(-50%) scale(0.3);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.7);
+    opacity: 0;
+  }
+}
+
+.water-splash {
+  animation: waterSplashRing 0.9s ease-out forwards;
+}
+
+/* Creative Animation 2: Fertilizing Nutrient Sparkles Rising */
+@keyframes nutrientFloatUp {
+  0% {
+    transform: translateY(20px) scale(0.4) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110px) scale(1.15) rotate(160deg);
+    opacity: 0;
+  }
+}
+
+.nutrient-particle {
+  position: absolute;
+  animation: nutrientFloatUp 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+/* Creative Animation 3: Protective Fence & Guardian Shield */
+@keyframes shieldPopIn {
+  0% {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.06);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shieldShimmer {
+  0%, 100% {
+    opacity: 0.72;
+    filter: drop-shadow(0 0 8px rgba(52, 166, 204, 0.45));
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 16px rgba(138, 189, 63, 0.75));
+  }
+}
+
+.shield-active {
+  animation: shieldPopIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             shieldShimmer 2.8s ease-in-out 0.55s infinite;
+}
+
+@keyframes fenceBuild {
+  0% {
+    transform: translateY(18px) scaleY(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+  }
+}
+
+.fence-active {
+  animation: fenceBuild 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Tree Canopy Lush Bounce */
+@keyframes treeLushBounce {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.09) translateY(-4px); }
+  70% { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+.tree-bounce {
+  animation: treeLushBounce 0.65s ease-out;
+}
+
+/* Floating Green Points (+10 pts) */
+@keyframes floatPoints {
+  0% {
+    transform: translate(-50%, 0) scale(0.7);
+    opacity: 0;
+  }
+  20% {
+    transform: translate(-50%, -14px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -75px) scale(0.95);
+    opacity: 0;
+  }
+}
+
+.floating-points {
+  animation: floatPoints 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+/* Screen Transition */
+@keyframes screenFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.screen-enter {
+  animation: screenFadeIn 0.28s ease-out forwards;
+}
+
+/* Subtle Map Grid Pattern */
+.map-pattern {
+  background-color: #eef6f0;
+  background-image:
+    radial-gradient(#c7e2cf 1px, transparent 1px),
+    radial-gradient(#d7ebf2 1px, #eef6f0 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.dark .map-pattern {
+  background-color: #16221b;
+  background-image:
+    radial-gradient(#243b2d 1px, transparent 1px),
+    radial-gradient(#1e333c 1px, #16221b 1px);
+}
